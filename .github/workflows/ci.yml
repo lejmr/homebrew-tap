@@ -11,6 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Tap this checkout
         run: brew tap lejmr/tap "$GITHUB_WORKSPACE"
-      - run: brew install lejmr/tap/herdr-lid-awake
+      - name: Install, from the bottle when the formula has one
+        run: |
+          set -o pipefail
+          brew install lejmr/tap/herdr-lid-awake 2>&1 | tee install.log
+          # A broken bottle makes brew build from source without failing; that would need Xcode again.
+          if grep -q '^  bottle do' Formula/herdr-lid-awake.rb; then
+            grep -q 'Pouring herdr-lid-awake' install.log || { echo "bottle not poured"; exit 1; }
+          fi
       - run: brew test lejmr/tap/herdr-lid-awake
       - run: brew audit --strict --online lejmr/tap/herdr-lid-awake
