@@ -6,6 +6,11 @@ class HerdrLidAwake < Formula
   sha256 "3a7f944a073004b677e5b1887613cb081967515ec519166a15ab1d2caa7cf488"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/lejmr/herdr-lid-awake/releases/download/v0.2.0"
+    sha256 cellar: :any_skip_relocation, all: "b31de6246128b9d142220e1653d7ecd2dadf3d6dc07ac6b3945c8bfc49e3ab67"
+  end
+
   depends_on :macos
 
   def install
