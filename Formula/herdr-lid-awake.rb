@@ -2,13 +2,13 @@ class HerdrLidAwake < Formula
   desc "Keep the Mac running with the lid closed while the Herdr UI cup is on"
   homepage "https://github.com/lejmr/herdr-lid-awake"
   # The release workflow of herdr-lid-awake rewrites url and sha256 on every tag.
-  url "https://github.com/lejmr/herdr-lid-awake/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "3a7f944a073004b677e5b1887613cb081967515ec519166a15ab1d2caa7cf488"
+  url "https://github.com/lejmr/herdr-lid-awake/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "f9c590d305df8ca4ab43e1caa00d9878839423dd8c8089ddc7700982998b3392"
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/lejmr/herdr-lid-awake/releases/download/v0.2.0"
-    sha256 cellar: :any_skip_relocation, all: "b31de6246128b9d142220e1653d7ecd2dadf3d6dc07ac6b3945c8bfc49e3ab67"
+    root_url "https://github.com/lejmr/herdr-lid-awake/releases/download/v0.2.1"
+    sha256 cellar: :any_skip_relocation, all: "331ca755a1524003fef81db1fd153aefc8b9e51cad2a57e581c9d70c04cb8444"
   end
 
   depends_on :macos
