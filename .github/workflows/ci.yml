@@ -1,0 +1,16 @@
+name: ci
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '43 6 * * 1'
+jobs:
+  formulae:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap this checkout
+        run: brew tap lejmr/tap "$GITHUB_WORKSPACE"
+      - run: brew install lejmr/tap/herdr-lid-awake
+      - run: brew test lejmr/tap/herdr-lid-awake
+      - run: brew audit --strict --online lejmr/tap/herdr-lid-awake
