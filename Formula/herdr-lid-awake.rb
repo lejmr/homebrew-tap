@@ -24,8 +24,11 @@ class HerdrLidAwake < Formula
       The watcher needs a sudoers rule for `pmset disablesleep 0|1`.
       Install it once (asks for your password, validated with visudo):
         herdr-lid-awake install-sudoers
+      (one file per account: /etc/sudoers.d/herdr-lid-awake-<uid>)
       Then start the watcher:
         brew services start herdr-lid-awake
+      To remove: stop the service first, then delete that sudoers file and
+        ~/.local/state/herdr-lid-awake
     EOS
   end
 
